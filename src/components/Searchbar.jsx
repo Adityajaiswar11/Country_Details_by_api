@@ -5,7 +5,7 @@ export const Searchbar = ({ search, setSearch }) => {
   return (
     <>
       <main className="w-full py-6 px-2">
-        <div className="md:w-[70%] w-full px-5 md:px-5 mx-auto flex justify-between items-center gap-5">
+        <div className="md:w-[75%] w-full px-5 md:px-5 mx-auto flex justify-between items-center gap-5">
           <div>
           <h1 className="py-2 md:text-md text-black/80 font-medium text-sm">Search a country name</h1>
             <input
