@@ -1,11 +1,9 @@
-
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { CountryCard } from "./CountryCard";
 import axios from "axios";
 
-export const CountryList = ({ search}) => {
-          
+export const CountryList = ({ search }) => {
   const [country, setCountry] = useState([]);
   const [filterCountry, setFilterCountry] = useState([]);
 
@@ -24,7 +22,7 @@ export const CountryList = ({ search}) => {
       return data.name.common.toLowerCase().includes(search.toLowerCase());
     });
     setFilterCountry(filteredCountries);
-    console.log(filteredCountries)
+    console.log(filteredCountries);
   }, [country, search]);
   return (
     <>

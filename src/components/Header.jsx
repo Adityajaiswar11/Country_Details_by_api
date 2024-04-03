@@ -11,7 +11,7 @@ export const Header = () => {
             Know all the Country details here
           </h1>
           <div className="flex justify-center items-center gap-2 hover:text-red-600 duration-200 cursor-pointer">
-            <IoHome size={20}  />
+            <IoHome size={20} />
             <a
               href="/"
               className="text-[1rem] font-semibold hover:text-red-600 duration-200 link px-1"
