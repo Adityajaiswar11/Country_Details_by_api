@@ -1,9 +1,11 @@
+
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { CountryCard } from "./CountryCard";
 import axios from "axios";
 
-export const CountryList = ({ search }) => {
+export const CountryList = ({ search}) => {
+          
   const [country, setCountry] = useState([]);
   const [filterCountry, setFilterCountry] = useState([]);
 
@@ -22,16 +24,16 @@ export const CountryList = ({ search }) => {
       return data.name.common.toLowerCase().includes(search.toLowerCase());
     });
     setFilterCountry(filteredCountries);
+    console.log(filteredCountries)
   }, [country, search]);
-
   return (
     <>
-      <main className="w-[85%] mx-auto px-5 mt-10">
+      <main className="md:w-[85%] w-full mx-auto px-5 mt-10">
         <h1 className="font-medium text-2xl opacity-90 first-letter:text-red-600 text-center">
-          Country Details
+          All Country List Details
         </h1>
         {filterCountry.length > 0 ? (
-          <div className="mt-[3rem] mb-5 grid md:grid-cols-3 gap-6 grid-cols-1 items-center">
+          <div className="mt-[3rem] mb-5 grid md:grid-cols-2 xl:grid-cols-4 gap-10 grid-cols-1">
             {filterCountry.map((data) => (
               <CountryCard data={data} key={data.id} />
             ))}

@@ -8,8 +8,7 @@ import { Searchbar } from "./components/Searchbar"
 
 
 function App() {
-  const [search, setSearch] = useState('')
-
+  const [search, setSearch] = useState('');
   
   return (
     <>
