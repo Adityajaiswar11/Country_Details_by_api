@@ -48,10 +48,10 @@ export const CountryList = ({ search }) => {
                 <CountryCard data={data} key={data.id} />
               ))}
             </div>
-            <div className="mt-[3rem] w-full flex justify-between items-center mb-[3rem]">
+            <div className="mt-[3rem] w-full flex justify-between items-center mb-[3rem] flex-wrap ">
               <span
                 className={`cursor-pointer border border-black py-2 px-2 ${
-                  page == 1 ? "opacity-0" : ""
+                  page == 1 ? "hidden" : ""
                 }`}
                 onClick={() => handlePageChange(page - 1)}
               >
@@ -70,7 +70,7 @@ export const CountryList = ({ search }) => {
               ))}
               <span
                 className={`cursor-pointer border border-black py-2 px-2 ${
-                  page == filterCountry.length / 10 ? "opacity-0" : ""
+                  page == filterCountry.length / 10 ? "hidden" : ""
                 }`}
                 onClick={() => handlePageChange(page + 1)}
               >
