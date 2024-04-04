@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import { CiSearch } from "react-icons/ci";
 export const Searchbar = ({ setSearch }) => {
   return (
     <>
@@ -9,12 +9,19 @@ export const Searchbar = ({ setSearch }) => {
             <h1 className="py-2 md:text-md text-black/80 font-medium text-sm">
               Search a country name
             </h1>
-            <input
-              type="text"
-              onChange={(e) => setSearch(e.target.value.toLowerCase())}
-              placeholder="Search a country"
-              className="md:w-[300px] w-[170px] h-10 outline-none border border-gray-300 px-2 py-2 hover:border-black/70 rounded-sm text-sm"
-            />
+           <div className="flex justify-center items-center md:w-[300px] w-[170px] border px-2  hover:border-black/70 rounded-sm ">
+           <input
+          
+          type="text"
+          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          placeholder="Search a country"
+          className="w-full h-10 outline-none px-2 py-2 text-sm"
+          
+        />
+          <span><CiSearch/></span>
+           </div>
+           
+           
           </div>
           <div>
             <h1 className="py-2 md:text-md text-sm text-black/80 font-medium ">
