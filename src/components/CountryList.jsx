@@ -20,7 +20,10 @@ export const CountryList = ({ search }) => {
   useEffect(() => {
     const filteredCountries = country.filter((data) => {
       if (search === "") return true; // Include all countries if search is empty
-      return data.name.common.toLowerCase().includes(search.toLowerCase());
+      return (
+        data.name.common.toLowerCase().includes(search.toLowerCase()) ||
+        data?.region.toLowerCase().includes(search.toLowerCase())
+      );
     });
     setFilterCountry(filteredCountries);
     setPage(1); // Reset page to 1 whenever search changes
@@ -48,7 +51,7 @@ export const CountryList = ({ search }) => {
                 <CountryCard data={data} key={data.id} />
               ))}
             </div>
-            <div className="mt-[3rem] w-full flex justify-between items-center mb-[3rem] flex-wrap ">
+            <div className="mt-[3rem] w-full flex justify-center items-center mb-[3rem] flex-wrap gap-2 ">
               <span
                 className={`cursor-pointer border border-black py-2 px-2 ${
                   page == 1 ? "hidden" : ""
