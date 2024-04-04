@@ -6,7 +6,7 @@ export const CountryCard = ({ data }) => {
       <div className="xl:w-[300px] md:w-[330px] w-[320px] text-center rounded-sm shadow-md shadow-black/65 bg-gray-200 cursor-pointer hover:scale-[1.1] duration-300">
         <img
           src={data?.flags?.svg}
-          alt="flag"
+          alt={data?.name?.common}
           className="h-[200px] w-full object-cover"
         />
         <div className="mt-1 py-3 text-center ">
