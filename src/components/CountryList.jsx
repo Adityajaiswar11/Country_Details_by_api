@@ -4,7 +4,7 @@ import { CountryCard } from "./CountryCard";
 import axios from "axios";
 import Loader from "./Loader";
 
-export const CountryList = ({ search }) => {
+export const CountryList = ({ search ,setSingleCountry}) => {
   const [country, setCountry] = useState([]);
   const [filterCountry, setFilterCountry] = useState([]);
   const [page, setPage] = useState(1);
@@ -43,7 +43,7 @@ export const CountryList = ({ search }) => {
     )
       setPage(newPage);
   };
-
+  
   return (
     <>
     {loader ? <Loader/>:(
@@ -53,9 +53,12 @@ export const CountryList = ({ search }) => {
       </h1>
       {filterCountry.length > 0 ? (
         <>
+        
           <div className="mt-[3rem] mb-5 grid md:grid-cols-2 xl:grid-cols-4 gap-10 grid-cols-1">
             {filterCountry.slice(page * 10 - 10, page * 10).map((data) => (
-              <CountryCard data={data} key={data?.name?.common} />
+             
+              <CountryCard data={data} key={data.name.common} setSingleCountry={setSingleCountry}/>
+              
             ))}
           </div>
           <div className="mt-[3rem] w-full flex justify-center items-center mb-[3rem] flex-wrap gap-2 ">

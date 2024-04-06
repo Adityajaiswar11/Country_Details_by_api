@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
 
-export const CountryCard = ({ data }) => {
+import { Link } from "react-router-dom";
+
+export const CountryCard = ({ data,setSingleCountry}) => {
+  const handleClick = (data)=>{
+   
+    setSingleCountry(data)
+  }
+
   return (
+      <Link to ={`/country/${data?.name?.common}`}>
     <div className="flex justify-center items-center">
-      <div className="xl:w-[300px] md:w-[330px] w-[320px] text-center rounded-sm shadow-md shadow-black/65 bg-gray-200 cursor-pointer hover:scale-[1.1] duration-300">
+      <div className="xl:w-[300px] md:w-[330px] w-[320px] text-center rounded-sm shadow-md shadow-black/65 bg-gray-200 cursor-pointer hover:scale-[1.1] duration-300" onClick={()=>handleClick(data)}>
         <img
           src={data?.flags?.svg}
           alt={data?.name?.common}
@@ -11,7 +19,7 @@ export const CountryCard = ({ data }) => {
         />
         <div className="mt-1 py-3 text-center ">
           <h1 className="py-1 font-semibold text-black/80">
-            Country Name :{" "}
+            Country :{" "}
             <span className="text-red-">{data?.name?.common}</span>
           </h1>
           <h1 className="py-1 font-semibold text-black/80">
@@ -26,5 +34,6 @@ export const CountryCard = ({ data }) => {
         </div>
       </div>
     </div>
+      </Link>
   );
 };

@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom"
 import { IoHome } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -16,12 +17,12 @@ export const Header = () => {
 
           <div className="flex justify-center items-center gap-2 hover:text-red-600 duration-200 cursor-pointer">
             <IoHome size={20} />
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-[1rem] font-semibold hover:text-red-600 duration-200 link px-1"
             >
               Home
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
