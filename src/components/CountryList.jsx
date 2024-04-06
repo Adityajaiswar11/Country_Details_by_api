@@ -23,6 +23,7 @@ export const CountryList = ({ search }) => {
 
   useEffect(() => {
     const filteredCountries = country.filter((data) => {
+      setLoader(true)
       if (search === "") return true; // Include all countries if search is empty
       return (
         data.name.common.toLowerCase().includes(search.toLowerCase()) ||
@@ -30,6 +31,7 @@ export const CountryList = ({ search }) => {
       );
     });
     setFilterCountry(filteredCountries);
+    setLoader(false)
     setPage(1); // Reset page to 1 whenever search changes
   }, [country, search]);
 
