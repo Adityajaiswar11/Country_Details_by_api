@@ -28,15 +28,15 @@ export const Searchbar = ({ setSearch }) => {
               Filter By Region
             </h1>
             <select
-              className="md:w-[200px] w-[120px] border border-gray-300 py-2 px-2 rounded-sm"
+              className="md:w-[200px] w-[120px] border border-gray-300 py-2 px-2 rounded-sm cursor-pointer"
               onChange={(e) => setSearch(e.target.value)}
             >
               <option hidden>Select Region</option>
-              <option value="asia">Asia</option>
-              <option value="africa">Africa</option>
-              <option value="americas"> Americas</option>
-              <option value="europe">Europe</option>
-              <option value="oceania">Oceania</option>
+              <option value="asia" className="cursor-pointer">Asia</option>
+              <option value="africa" className="cursor-pointer">Africa</option>
+              <option value="americas" className="cursor-pointer"> Americas</option>
+              <option value="europe" className="cursor-pointer">Europe</option>
+              <option value="oceania" className="cursor-pointer">Oceania</option>
             </select>
           </div>
         </div>
